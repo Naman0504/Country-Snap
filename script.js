@@ -8,6 +8,9 @@ fetch("https://restcountries.com/v3.1/all?fields=name,flags,capital,population,r
     data.map((country) => {
       const countyCard = document.createElement("a");
       countyCard.classList.add("country");
+      countyCard.href = `/country.html?name=${country.name.common}`
+
+      const population = country.population.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 
       countyCard.innerHTML = `
         
@@ -15,7 +18,7 @@ fetch("https://restcountries.com/v3.1/all?fields=name,flags,capital,population,r
         
           <div class="country-details">
             <h3 class="country-title">${country.name.common}</h3>
-            <p><b>Population :</b>${country.population}</p>
+            <p><b>Population :</b>${population}</p>
             <p><b>Region :</b>${country.region}</p>
             <p><b>Capital :</b>${country.capital}</p>
           </div>
