@@ -3,6 +3,13 @@ const params = new URLSearchParams(document.location.search).get("name");
 
 const countryImg = document.querySelector(".country-detail-box-image img");
 const countryName = document.querySelector(".countryname");
+const nativeName = document.querySelector(".nativeName span ");
+const population = document.querySelector(".Population span");
+const currencies = document.querySelector(".currencies span");
+const capital = document.querySelector(".capital span");
+const region = document.querySelector(".region span");
+const subregion = document.querySelector(".subRegion span");
+const language = document.querySelector(".language span");
 
 
 let countryData = []; 
@@ -29,5 +36,15 @@ getCountry(params).then(() => {
   }
 
   countryName.innerText = countryData[0].name.common
+  population.innerText = countryData[0].population
+  capital.innerText = countryData[0].capital[0]
+  region.innerText = countryData[0].region
+  subregion.innerText = countryData[0].subregion
+  language.innerText = Object.values(countryData[0].languages)[0]
+  // currencies.innerText = countryData[0].currencie
+
+  if(countryData[0].name.nativeName){
+   nativeName.innerText=  Object.values(countryData[0].name.nativeName)[0].common
+  }
 
 });

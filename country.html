@@ -1,13 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Country Details</title>
     <script src="country.js" defer></script>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+      integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
     <header class="header-Box">
       <div class="header-details">
         <h2 class="title"><i class="fa-solid fa-flag"></i> CountrySnap</h2>
@@ -15,31 +22,36 @@
         <p><i class="fa-regular fa-moon"></i> Dark Mode</p>
       </div>
     </header>
-    <main>
-        <div class="country-details-box">
-            <div class="country-detail-box-image">
-                <img src="https://flagcdn.com/tn.svg" alt="" srcset="">
-            </div>
-            <div class="country-detail-box-content">
-                <h1 class="countryname">Country Name</h1>
-                <div class="minor-details">
-                    <div class="minor-details-left">
-                        <p><b>Native Name :</b> Xyz </p>
-                        <p><b>Population :</b> 123 </p>
-                        <p><b>Region :</b> Xyz </p>
-                        <p><b>Sub Region :</b> Xyz </p>
-                        <p><b>Capital :</b> Xyz </p>
-                    </div>
-                    <div class="minor-details-right">
-                        <p><b>Top Level Domain :</b> Xyz </p>
-                        <p><b>Currencies :</b> 123 </p>
-                        <p><b>Language :</b> Xyz </p>
-                        
-                    </div>
 
-                </div>
-            </div>
+    <a href="index.html" class="back-button"
+      ><i class="fa-solid fa-arrow-left-long"></i>Back</a
+    >
+    <main>
+      <div class="country-details-box">
+        <div class="country-detail-box-image">
+          <img src="https://flagcdn.com/tn.svg" alt="" srcset="" />
         </div>
+        <div class="country-detail-box-content">
+          <h1 class="countryname">Country Name</h1>
+          <div class="minor-details">
+            <p class="nativeName"><b>Native Name :</b> <span></span></p>
+            <p class="Population"><b>Population :</b> <span></span></p>
+            <p class="region"><b>Region :</b> <span></span></p>
+            <p class="subRegion"><b>Sub Region :</b> <span></span></p>
+            <p class="capital"><b>Capital :</b> <span></span></p>
+
+            <p class="domain"><b>Top Level Domain :</b> <span></span></p>
+            <p class="currencies"><b>Currencies :</b> <span></span></p>
+            <p class="language"><b>Language :</b> <span></span></p>
+          </div>
+
+          <div class="border-countries">
+            <p><b>Border countries :</b> <a href="">France</a> <a href=""> <i class="fa-solid fa-map-pin"></i> France</a></p>
+        </div>
+        </div>
+
+        
+      </div>
     </main>
-</body>
+  </body>
 </html>
