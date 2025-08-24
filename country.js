@@ -10,6 +10,8 @@ const capital = document.querySelector(".capital span");
 const region = document.querySelector(".region span");
 const subregion = document.querySelector(".subRegion span");
 const language = document.querySelector(".language span");
+const domain = document.querySelector(".domain span");
+
 
 
 let countryData = []; 
@@ -40,11 +42,15 @@ getCountry(params).then(() => {
   capital.innerText = countryData[0].capital[0]
   region.innerText = countryData[0].region
   subregion.innerText = countryData[0].subregion
-  language.innerText = Object.values(countryData[0].languages)[0]
-  // currencies.innerText = countryData[0].currencie
+  language.innerText = Object.values(countryData[0].languages).join(', ')
+  domain.innerText =  countryData[0].tld.join(', ')
+  currencies.innerText = Object.values(countryData[0].currencies).map((currency)=> currency.name).join(', ')
 
   if(countryData[0].name.nativeName){
    nativeName.innerText=  Object.values(countryData[0].name.nativeName)[0].common
+  }
+  else{
+   nativeName.innerText= countryData[0].name.common
   }
 
 });

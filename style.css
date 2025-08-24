@@ -4,13 +4,16 @@
   margin: 0;
   font-family: monospace;
 }
-a{
+a {
   text-decoration: none;
   color: black;
 }
 body {
   /* background: #ffffb1; */
   /* background: linear-gradient(135deg, #ffffcb, #fffec4); */
+}
+main {
+  /* padding: 30px; */
 }
 
 .header-Box {
@@ -51,9 +54,9 @@ p i {
 .country-container {
   max-width: 1200px;
   margin-inline: auto;
-  padding: 30px;
+  /* padding: 30px; */
   display: flex;
-  gap:10px;
+  gap: 10px;
   flex-wrap: wrap;
   justify-content: space-between;
 }
@@ -74,108 +77,138 @@ p i {
 }
 
 .country-image {
-    margin-top: 0;
-   width: 250px;
+  margin-top: 0;
+  width: 250px;
   height: 150px;
   /* object-fit: cover; */
   /* border: 1px solid red; */
 }
 
-
-.country-details{
-    padding: 10px;
+.country-details {
+  padding: 10px;
 }
 
-.country-title{
-    font-size: 22px;
-
+.country-title {
+  font-size: 22px;
 }
 
-.country-details p{
-    margin-block: 5px;
+.country-details p {
+  margin-block: 5px;
 }
 
+.search-filters {
+  margin-bottom: 25px;
+  margin-top: 30px;
+  max-width: 1200px;
+  margin-inline: auto;
+  display: flex;
+  justify-content: space-between;
+}
+.search-input {
+  box-shadow: 1px 1px 3px #cecdcdc4;
+  max-width: 300px;
+  padding: 0 10px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  border-radius: 5px;
+}
+.search-input input {
+  border: 0;
+  outline: none;
+  padding: 16px 2px;
+}
+.search-input input::placeholder {
+  color: #cecdcdc4;
+}
+.search-input i {
+  color: #a7a5a5c4;
+}
+.filter-by-region {
+  box-shadow: 1px 1px 3px #cecdcdc4;
+  padding: 5px 10px;
+  outline: none;
+  border: 0;
+  width: 180px;
+  border-radius: 5px;
+}
 
 /* ------------- */
-.country-details-box{
-
+.country-details-box {
   width: 100%;
   height: 100%;
   padding: 50px;
   display: flex;
   gap: 50px;
   /* align-items: start; */
-
-
 }
-.country-details-box .country-detail-box-image{
-
+.country-details-box .country-detail-box-image {
   width: 500px;
   height: 400px;
-  border: 1px solid red;
-  }
-.country-details-box .country-detail-box-image img{
-
+  /* border: 1px solid red; */
+  box-shadow: 1px 1px 3px #ceccccc4;
+}
+.country-details-box .country-detail-box-image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  }
+}
 
-  .country-detail-box-content{
-    /* border: 2px solid yellow; */
-    flex: 1;
-    padding: 30px;
-  }
-  .country-detail-box-content h1{
-    margin-bottom: 20px;
-    font-size: 40px;
-  }
-  .country-detail-box-content p{
-    margin-bottom: 10px;
-    font-size: 15px;
-  }
-  .minor-details{
-    display: flex;
-    max-height: 230px;
-    row-gap: 13px;
-    column-gap: 55px;
-    flex-wrap: wrap;
-    /* width: 200px; */
-    /* border: 2px solid red; */
-    flex-direction: column;
-    /* justify-content: space-between; */
-  }
+.country-detail-box-content {
+  /* border: 2px solid yellow; */
+  flex: 1;
+  padding: 30px;
+}
+.country-detail-box-content h1 {
+  margin-bottom: 20px;
+  font-size: 40px;
+}
+.country-detail-box-content p {
+  margin-bottom: 10px;
+  font-size: 13px;
+}
+.minor-details {
+  display: flex;
+  max-height: 230px;
+  row-gap: 13px;
+  column-gap: 55px;
+  flex-wrap: wrap;
+  /* width: 200px; */
+  /* border: 2px solid red; */
+  flex-direction: column;
+  /* justify-content: space-between; */
+}
 
-  .back-button{
+.back-button {
+  background: #000;
+  padding: 8px 20px;
+  margin-top: 20px;
+  margin-left: 50px;
+  color: white;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
 
-    background: #000;
-    padding:8px 20px;
-    margin-top: 20px;
-    margin-left: 50px;
-    color: white;
-    display: inline-flex;
-    align-items: center;
-    gap: 5px;  
+.minor-details p {
+  /* background: #000; */
+  box-shadow: 1px 1px 3px #ceccccc4;
+  padding: 4px 10px;
+}
+.minor-details span {
+  max-height: 200px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
 
-  }
-
-  .minor-details p{
-      /* background: #000; */
-      box-shadow: 1px 1px 3px #ceccccc4;
-      padding: 4px 10px;
-  }
-
-  .border-countries{
-
-    margin-top: 40px;
-
-  }
-  .border-countries a{
-
-    /* margin-top: 40px; */
-    box-shadow: 1px 1px 3px #a8a7a7c4;
-      padding: 4px 10px;
-      margin-inline: 10px;
-      font-size: 16px;
-
-  }
+.border-countries {
+  margin-top: 40px;
+}
+.border-countries a {
+  /* margin-top: 40px; */
+  box-shadow: 1px 1px 3px #a8a7a7c4;
+  padding: 4px 10px;
+  margin-inline: 10px;
+  font-size: 16px;
+}
