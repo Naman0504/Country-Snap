@@ -1,18 +1,31 @@
 const contryContainer = document.querySelector(".country-container");
+const searchBox = document.querySelector(".search-box");
 
+let allCountries = [];
 
-fetch("https://restcountries.com/v3.1/all?fields=name,flags,capital,population,region")
+fetch(
+  "https://restcountries.com/v3.1/all?fields=name,flags,capital,population,region"
+)
   .then((response) => response.json())
   .then((data) => {
+    allCountries = data;
+    showCountries(allCountries);
     console.log(data);
-    data.map((country) => {
-      const countyCard = document.createElement("a");
-      countyCard.classList.add("country");
-      countyCard.href = `/country.html?name=${country.name.common}`
+  })
+  .catch((error) => console.log("Error:", error));
 
-      const population = country.population.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+function showCountries(countries) {
+  contryContainer.innerHTML = "";
+  countries.map((country) => {
+    const countyCard = document.createElement("a");
+    countyCard.classList.add("country");
+    countyCard.href = `/country.html?name=${country.name.common}`;
 
-      countyCard.innerHTML = `
+    const population = country.population
+      .toString()
+      .replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+
+    countyCard.innerHTML = `
         
             <img class="country-image" src=${country.flags.svg} alt="" />
         
@@ -24,7 +37,17 @@ fetch("https://restcountries.com/v3.1/all?fields=name,flags,capital,population,r
           </div>
         `;
 
-      contryContainer.append(countyCard);
-    });
-  })
-  .catch((error) => console.log("Error:", error));
+    contryContainer.append(countyCard);
+  });
+}
+
+searchBox.addEventListener("input", (e) => {
+  // console.log(e.target.value.toLowerCase());
+  const query = e.target.value.toLowerCase();
+
+  const filteredCounrties = allCountries.filter((country) =>
+    country.name.common.toLowerCase().includes(query ? query : "")
+  );
+  // return e.target.value;
+  showCountries(filteredCounrties);
+});
